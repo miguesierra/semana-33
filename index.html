@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>trabajo de la semana 33</title>
+	<style>
+		.w
+		{
+			width:1640px;
+			height:100px;
+			left:30px;
+			top:30px;
+			border-style:solid;
+			border-radius:30px;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       	padding-top:45px;
+       	font-size:70px;
+       	border-radius: 30px;
+       		font-family: ll1;
+		}
+		@font-face
+	{
+		font-family: ll1;
+		src:url(L1.ttf);
+	}
+		.v
+		{
+			width:180px;
+			height:60px;
+			left:230px;
+			top:280px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       	padding-top:30px;
+       	border-radius: 30px;
+       		font-family: ll1;
+       		 	font-size:25px;
+		}
+		.val
+		{
+			width:180px;
+			height:80px;
+			left:730px;
+			top:280px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       	border-radius: 30px;
+       		font-family: ll1;
+       		font-size:60px;
+
+		}
+		   	body
+{
+    background:-webkit-linear-gradient(30deg, #ED9714 30%, #E64040  70%);       
+}
+		.val2
+		{
+			width:920px;
+			height:130px;
+			left:70px;
+			top:540px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       	border-radius: 30px;
+       	font-size:50px;
+       	padding-top:80px;
+       		font-family: ll1;
+		}
+		.v2
+		{
+			width:180px;
+			height:60px;
+			left:1300px;
+			top:280px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       		padding-top:30px;
+       		border-radius: 30px;
+       			font-family: ll1;
+       				font-size:20px;
+		}
+.v3
+		{
+			width:180px;
+			height:60px;
+			left:200px;
+			top:280px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+       			padding-top:30px;
+       			border-radius: 30px;
+       				font-family: ll1;
+		}
+		.val3
+		{
+			width:310px;
+			height:220px;
+			left:1150px;
+			top:440px;
+			background:#F49E31 ;
+			text-align: center;
+        text-orientation: center;
+       	align-content:center;
+       	position: absolute;
+border-radius: 30px;
+       	font-size:120px;
+       	padding-top:70px;
+       		font-family: ll1;
+		}
+
+	</style>
+</head>
+<body>
+<div class="w" id="text"></div>
+<div class="val2" id="punt"></div>
+<div class="val3" id="tiempo"></div>
+<div class="v" onclick="hola()" id="gen">Generar Operacion </div>
+<div class="v2" onclick="chao()" id="validar">Validar Operacion </div>
+<input type="text" id="res" class="val" placeholder="Resultado">
+<script>
+sc=0;
+	function hola()
+	 {
+	 num1=Math.floor(Math.random() * (40-1)+1);
+     num2=Math.floor(Math.random() * (70-1)+1);
+     num3=Math.floor(Math.random() * (3-1)+1);
+       
+	 if(num3==1)
+	 {
+	 	
+	 	o=num1+"+"+num2;
+	 	respu=num1+num2;
+	 }
+ 	else 
+	 {
+	
+	 	o=num1+"-"+num2;
+	 	respu=num1-num2;		
+	 }
+     text.innerHTML=o;
+
+	}
+	puntaje=0;
+	function chao()
+	{
+     d=Number(res.value);
+    
+     if(d==respu)
+     {
+     	puntaje=puntaje+10; 
+     	
+     }
+   else
+     {
+     	puntaje=puntaje-10;
+     	  
+     }
+  punt.innerHTML="Score :"+puntaje;
+ 
+	}
+	x=61;
+	function cronometro()
+	{
+        x=x-1;
+  
+     if(x==0)
+     {
+     	 clearInterval(crono1);
+     	 punt.style.width=0+"px";
+     	 punt.style.height=0+"px";
+     	  punt.style.fontSize=0+"px";
+     	  gen.style.width=0+"px";
+     	 gen.style.height=0+"px";
+     	  gen.style.fontSize=0+"px";
+     	  validar.style.width=0+"px";
+     	 validar.style.height=0+"px"
+     	 validar.style.fontSize=0+"px";
+     	  res.style.width=0+"px";
+     	 res.style.height=0+"px"
+     	 res.style.fontSize=0+"px";
+     	 text.innerHTML="Fin del juego"+"<br>";
+     	  
+     	 text.style.height=200+"px";
+
+
+
+     }
+       
+           tiempo.innerHTML=x;
+
+	}
+	crono1=setInterval(cronometro,1000)
+ 
+</script>
+</body>
+</html>
